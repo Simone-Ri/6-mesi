@@ -1,0 +1,485 @@
+/* ========================================
+   1. VARIABILI E IMPOSTAZIONI GENERALI
+======================================== */
+
+:root {
+    --cream: #f8f0e8;
+    --paper: #fffaf5;
+    --pink: #e8c7c6;
+    --dusty-pink: #c98f94;
+    --burgundy: #743b4a;
+    --dark-burgundy: #512735;
+    --text: #49343a;
+    --muted: #967d80;
+    --green: #668c70;
+    --red: #b95e66;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text);
+    background: var(--cream);
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--burgundy);
+    outline-offset: 5px;
+}
+
+.site-container {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            ellipse at 10% 15%,
+            rgba(232, 199, 198, 0.45),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 90% 85%,
+            rgba(201, 143, 148, 0.20),
+            transparent 35%
+        ),
+        var(--cream);
+}
+
+
+/* ========================================
+   2. DECORAZIONI DI SFONDO
+======================================== */
+
+.background-decoration {
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(116, 59, 74, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoration-one {
+    top: -150px;
+    right: -100px;
+}
+
+.decoration-two {
+    bottom: -180px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+}
+
+
+/* ========================================
+   3. SCHERMATE
+======================================== */
+
+.screen {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 40px 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active {
+    display: flex;
+    animation: screen-appear 0.8s ease both;
+}
+
+.screen[hidden] {
+    display: none !important;
+}
+
+@keyframes screen-appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   4. CONTENUTI
+======================================== */
+
+.welcome-content,
+.quiz-content,
+.story-content {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 26px;
+    color: var(--burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    line-height: 1.8;
+}
+
+h1,
+h2 {
+    color: var(--dark-burgundy);
+    font-size: clamp(42px, 8vw, 76px);
+    font-weight: normal;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+h1 span,
+h2 span {
+    color: var(--dusty-pink);
+    font-style: italic;
+}
+
+.welcome-description,
+.quiz-description,
+.story-description {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.heart-decoration {
+    margin-bottom: 18px;
+    color: var(--dusty-pink);
+    font-size: 54px;
+    animation: heartbeat 2.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.08);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.05);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+
+/* ========================================
+   5. PULSANTE INIZIALE
+======================================== */
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 38px;
+    padding: 17px 28px;
+
+    color: var(--paper);
+    background: var(--burgundy);
+
+    border: 1px solid var(--burgundy);
+    border-radius: 3px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-button:hover {
+    color: var(--burgundy);
+    background: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(81, 39, 53, 0.08);
+}
+
+.primary-button span {
+    font-size: 17px;
+}
+
+.welcome-footer {
+    margin-top: 55px;
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ========================================
+   6. QUIZ INIZIALE
+======================================== */
+
+.quiz-content {
+    max-width: 600px;
+}
+
+.quiz-heart {
+    margin-bottom: 20px;
+    color: var(--dusty-pink);
+    font-size: 42px;
+    animation: heartbeat 2.4s ease-in-out infinite;
+}
+
+.quiz-description {
+    margin-top: 18px;
+}
+
+.answer-area {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    width: 100%;
+    min-height: 110px;
+
+    margin-top: 25px;
+}
+
+.answer-button {
+    min-width: 115px;
+    min-height: 48px;
+
+    padding: 13px 24px;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        font-size 0.25s ease;
+}
+
+.yes-button {
+    position: relative;
+    z-index: 2;
+
+    color: white;
+    background: var(--green);
+
+    border-color: var(--green);
+}
+
+.yes-button:hover {
+    background: #52765c;
+    border-color: #52765c;
+}
+
+.no-button {
+    position: relative;
+    z-index: 3;
+
+    color: var(--red);
+    background: rgba(255, 250, 245, 0.8);
+
+    border-color: rgba(185, 94, 102, 0.5);
+
+    transition:
+        left 0.22s ease,
+        top 0.22s ease,
+        transform 0.22s ease,
+        background 0.2s ease;
+}
+
+.no-button:hover {
+    background: white;
+}
+
+.quiz-hint {
+    min-height: 24px;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ========================================
+   7. PRIMA SCHERMATA DELLA STORIA
+======================================== */
+
+.story-heart {
+    margin-bottom: 22px;
+    color: var(--dusty-pink);
+    font-size: 55px;
+}
+
+.story-description {
+    margin-top: 25px;
+}
+
+.story-note {
+    margin-top: 28px;
+    color: var(--burgundy);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.coming-soon {
+    margin-top: 55px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(116, 59, 74, 0.15);
+}
+
+.coming-soon span {
+    color: var(--dusty-pink);
+    font-size: 25px;
+}
+
+.coming-soon p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   8. SMARTPHONE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 32px 22px;
+    }
+
+    .eyebrow {
+        margin-bottom: 24px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    h1,
+    h2 {
+        font-size: clamp(39px, 11vw, 58px);
+        letter-spacing: -1.5px;
+    }
+
+    .welcome-description,
+    .quiz-description,
+    .story-description {
+        font-size: 15px;
+    }
+
+    .heart-decoration {
+        font-size: 45px;
+    }
+
+    .primary-button {
+        margin-top: 32px;
+        padding: 16px 23px;
+    }
+
+    .welcome-footer {
+        margin-top: 42px;
+    }
+
+	.answer-area {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 22px;
+
+		width: 100%;
+		max-width: 420px;
+		min-height: 220px;
+
+		margin: 25px auto 0;
+	}
+
+    .answer-button {
+        min-width: 100px;
+        padding: 13px 18px;
+    }
+
+    .decoration-one {
+        right: -200px;
+    }
+
+    .decoration-two {
+        left: -260px;
+    }
+}
+
+
+/* ========================================
+   9. ACCESSIBILITÀ
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

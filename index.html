@@ -1,14 +1,150 @@
-//index,html 6 mesi
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il mio sito</title>
+
+    <meta name="theme-color" content="#f8f0e8">
+    <meta name="description" content="Una piccola sorpresa dedicata a Nefertite.">
+
+    <title>Una sorpresa per te</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1>Ciao Mondo!</h1>
+
+    <main class="site-container">
+
+        <!-- DECORAZIONI DI SFONDO -->
+        <div class="background-decoration decoration-one"></div>
+        <div class="background-decoration decoration-two"></div>
+
+        <!-- SCHERMATA INIZIALE -->
+        <section id="welcome-screen" class="screen active">
+
+            <div class="welcome-content">
+
+                <span class="eyebrow">
+                    UNA PICCOLA SORPRESA
+                </span>
+
+                <div class="heart-decoration" aria-hidden="true">
+                    ♡
+                </div>
+
+                <h1>
+                    Per te,<br>
+                    <span>stellina.</span>
+                </h1>
+
+                <p class="welcome-description">
+                    Ho preparato qualcosa per te.<br>
+                    Ti va di scoprirlo?
+                </p>
+
+                <button id="start-button" class="primary-button">
+                    Inizia la sorpresa
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="welcome-footer">
+                    Fatto con amore, da me a te.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ INIZIALE -->
+        <section id="quiz-screen" class="screen" hidden>
+
+            <div class="quiz-content">
+
+                <span class="eyebrow">
+                    PRIMA DI CONTINUARE...
+                </span>
+
+                <div class="quiz-heart" aria-hidden="true">
+                    ♥
+                </div>
+
+                <h2>
+                    Nefertite,<br>
+                    ami Simon?
+                </h2>
+
+                <p class="quiz-description">
+                    Attenta a cosa scegli...
+                </p>
+
+                <div id="answer-area" class="answer-area">
+
+                    <button
+                        id="yes-button"
+                        class="answer-button yes-button"
+                        type="button">
+                        SÌ ♡
+                    </button>
+
+                    <button
+                        id="no-button"
+                        class="answer-button no-button"
+                        type="button">
+                        NO
+                    </button>
+
+                </div>
+
+                <p id="quiz-hint" class="quiz-hint">
+                    Scegli con attenzione :)
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRIMA SCHERMATA DELLA STORIA -->
+        <section id="story-screen" class="screen" hidden>
+
+            <div class="story-content">
+
+                <span class="eyebrow">
+                    15 APRILE 2026
+                </span>
+
+                <div class="story-heart" aria-hidden="true">
+                    ♡
+                </div>
+
+                <h2>
+                    E tutto questo<br>
+                    <span>è solo l'inizio.</span>
+                </h2>
+
+                <p class="story-description">
+                    Sei mesi di noi.<br>
+                    Sei mesi di ricordi, emozioni<br>
+                    e momenti che porterò sempre con me.
+                </p>
+
+                <p class="story-note">
+                    E adesso voglio farti rivivere la nostra storia.
+                </p>
+
+                <div class="coming-soon">
+                    <span>♡</span>
+                    <p>La nostra storia continua...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
 </html>
-```
