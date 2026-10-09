@@ -67,10 +67,10 @@ function moveNoButton() {
     noAttempts++;
 
     // Il pulsante SÌ cresce gradualmente.
-    const yesScale = Math.min(
-        1 + noAttempts * 0.12,
-        1.8
-    );
+	const yesScale = Math.min(
+		1 + noAttempts * 0.08,
+		1.5
+	);
 
     yesButton.style.transform = `scale(${yesScale})`;
 
@@ -82,7 +82,7 @@ function moveNoButton() {
     const yesRect = yesButton.getBoundingClientRect();
 
     const margin = 12;
-    const minDistance = Math.min(130, areaRect.width * 0.35);
+    const minDistance = Math.min(100, areaRect.width * 0.25);
 
     // Posizione del SÌ rispetto all'area.
     const yesLeft = yesRect.left - areaRect.left;
@@ -121,9 +121,9 @@ function moveNoButton() {
             newY + noRect.height > yesTop - margin;
 
         if (!overlapsYes && distance >= minDistance) {
-            validPosition = true;
-            break;
-        }
+			validPosition = true;
+			break;
+		}
     }
 
     if (validPosition) {

@@ -448,7 +448,7 @@ h2 span {
 
 		width: 100%;
 		max-width: 420px;
-		min-height: 220px;
+		min-height: 300px;
 
 		margin: 25px auto 0;
 	}
@@ -481,5 +481,277 @@ h2 span {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+.story-date {
+    margin: 20px 0 12px;
+    color: #9b6575;
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.story-divider {
+    margin: 25px 0;
+    color: #b77b8d;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+}
+
+.story-description {
+    max-width: 480px;
+    margin: 18px auto;
+    line-height: 1.9;
+}
+
+.story-note {
+    max-width: 420px;
+    margin: 28px auto;
+    color: #925b6b;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.story-footer {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.story-content .primary-button {
+    margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+    .story-content {
+        width: 100%;
+        padding: 28px 22px;
+    }
+
+    .story-description {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .story-note {
+        font-size: 0.95rem;
+    }
+}
+
+/* ========================================
+   TEMA ROMANTICO HELLO KITTY 🎀
+   ======================================== */
+
+:root {
+    --hk-pink: #f4b6c8;
+    --hk-light-pink: #fde8ef;
+    --hk-pale-pink: #fff5f8;
+    --hk-cream: #fffaf3;
+    --hk-burgundy: #843b52;
+    --hk-text: #694450;
+    --hk-white: #ffffff;
+}
+
+/* Sfondo romantico */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(244, 182, 200, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(253, 232, 239, 0.9),
+            transparent 40%
+        ),
+        var(--hk-cream);
+
+    color: var(--hk-text);
+}
+
+/* Titoli */
+
+h1,
+h2 {
+    color: var(--hk-burgundy);
+    letter-spacing: -0.5px;
+}
+
+h1 span,
+h2 span {
+    color: #c16d8a;
+}
+
+/* Piccole etichette sopra i titoli */
+
+.eyebrow {
+    color: #b56580;
+    letter-spacing: 3px;
+    font-size: 0.72rem;
+}
+
+/* Cuori decorativi */
+
+.heart-decoration,
+.quiz-heart,
+.story-heart {
+    color: #d982a0;
+    text-shadow: 0 3px 15px rgba(217, 130, 160, 0.2);
+}
+
+/* Pulsanti principali */
+
+.primary-button {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #eaa0b8,
+        #d982a0
+    );
+
+    color: var(--hk-white);
+
+    box-shadow:
+        0 8px 22px rgba(190, 105, 135, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 26px rgba(190, 105, 135, 0.3);
+
+    filter: brightness(1.04);
+}
+
+/* Pulsanti della domanda */
+
+.answer-button {
+    border-radius: 25px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.yes-button {
+    background-color: #e99bb5;
+    color: white;
+    box-shadow: 0 5px 18px rgba(217, 130, 160, 0.2);
+}
+
+.no-button {
+    background-color: white;
+    color: var(--hk-burgundy);
+    border: 1px solid #edc2d0;
+}
+
+/* Contenuto delle scene */
+
+.story-content,
+.welcome-content,
+.quiz-content {
+    position: relative;
+}
+
+/* Decorazione delicata della seconda sezione */
+
+.coming-soon {
+    border: 1px solid rgba(217, 130, 160, 0.25);
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 8px 25px rgba(132, 59, 82, 0.05);
+}
+
+/* Linee decorative */
+
+.story-divider {
+    color: #d982a0;
+}
+
+/* Testi romantici */
+
+.story-note,
+.story-footer,
+.welcome-footer {
+    color: #9e6578;
+}
+
+/* Piccoli schermi */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(2.4rem, 10vw, 3.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .primary-button {
+        max-width: 100%;
+    }
+}
+
+/* Rispetta chi preferisce meno animazioni */
+
+@media (prefers-reduced-motion: reduce) {
+    .primary-button,
+    .answer-button {
+        transition: none;
+    }
+}
+
+/* Hello Kitty nella schermata iniziale */
+
+.hello-kitty-decoration {
+    display: block;
+
+    width: 115px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 auto 22px;
+
+    filter: drop-shadow(0 5px 8px rgba(190, 105, 135, 0.12));
+
+    animation: helloKittyFloat 3s ease-in-out infinite;
+}
+
+@keyframes helloKittyFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hello-kitty-decoration {
+        width: 95px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hello-kitty-decoration {
+        animation: none;
     }
 }
