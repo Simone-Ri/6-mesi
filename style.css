@@ -3,16 +3,26 @@
 ======================================== */
 
 :root {
-    --cream: #f8f0e8;
-    --paper: #fffaf5;
-    --pink: #e8c7c6;
-    --dusty-pink: #c98f94;
-    --burgundy: #743b4a;
-    --dark-burgundy: #512735;
-    --text: #49343a;
-    --muted: #967d80;
-    --green: #668c70;
-    --red: #b95e66;
+    --cream: #fff8f2;
+    --paper: #fffdfb;
+    --pink: #f4c5d3;
+    --light-pink: #fde8ef;
+    --dusty-pink: #d982a0;
+    --burgundy: #843b52;
+    --dark-burgundy: #592b3b;
+    --text: #694450;
+    --muted: #a17e89;
+    --green: #d982a0;
+    --red: #a9677c;
+
+    --radius-card: 24px;
+    --radius-button: 30px;
+
+    --shadow-soft:
+        0 12px 35px rgba(132, 59, 82, 0.07);
+
+    --shadow-button:
+        0 7px 18px rgba(190, 105, 135, 0.2);
 }
 
 * {
@@ -29,7 +39,19 @@ body {
     min-height: 100vh;
     font-family: Georgia, "Times New Roman", serif;
     color: var(--text);
-    background: var(--cream);
+
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(244, 182, 200, 0.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 88% 80%,
+            rgba(253, 232, 239, 0.85),
+            transparent 40%
+        ),
+        var(--cream);
 }
 
 button {
@@ -41,21 +63,37 @@ button:focus-visible {
     outline-offset: 5px;
 }
 
+button:disabled {
+    cursor: default;
+}
+
+::selection {
+    color: var(--dark-burgundy);
+    background: var(--light-pink);
+}
+
+
+/* ========================================
+   2. CONTENITORE PRINCIPALE
+======================================== */
+
 .site-container {
     position: relative;
     min-height: 100vh;
     min-height: 100svh;
+
     overflow: hidden;
     isolation: isolate;
+
     background:
         radial-gradient(
-            ellipse at 10% 15%,
-            rgba(232, 199, 198, 0.45),
+            ellipse at 8% 12%,
+            rgba(244, 182, 200, 0.22),
             transparent 38%
         ),
         radial-gradient(
-            ellipse at 90% 85%,
-            rgba(201, 143, 148, 0.20),
+            ellipse at 92% 88%,
+            rgba(217, 130, 160, 0.12),
             transparent 35%
         ),
         var(--cream);
@@ -63,16 +101,19 @@ button:focus-visible {
 
 
 /* ========================================
-   2. DECORAZIONI DI SFONDO
+   3. DECORAZIONI DI SFONDO
 ======================================== */
 
 .background-decoration {
     position: absolute;
     z-index: -1;
+
     width: 300px;
     height: 300px;
-    border: 1px solid rgba(116, 59, 74, 0.12);
+
+    border: 1px solid rgba(132, 59, 82, 0.10);
     border-radius: 50%;
+
     pointer-events: none;
 }
 
@@ -84,28 +125,32 @@ button:focus-visible {
 .decoration-two {
     bottom: -180px;
     left: -120px;
+
     width: 400px;
     height: 400px;
 }
 
 
 /* ========================================
-   3. SCHERMATE
+   4. SCHERMATE E TRANSIZIONI
 ======================================== */
 
 .screen {
     display: none;
     position: relative;
+
     min-height: 100vh;
     min-height: 100svh;
-    padding: 40px 24px;
+
+    padding: 48px 24px;
+
     align-items: center;
     justify-content: center;
 }
 
 .screen.active {
     display: flex;
-    animation: screen-appear 0.8s ease both;
+    animation: screen-appear 0.7s ease both;
 }
 
 .screen[hidden] {
@@ -115,7 +160,7 @@ button:focus-visible {
 @keyframes screen-appear {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(14px);
     }
 
     to {
@@ -126,58 +171,99 @@ button:focus-visible {
 
 
 /* ========================================
-   4. CONTENUTI
+   5. CONTENUTI
 ======================================== */
 
 .welcome-content,
 .quiz-content,
 .story-content {
+    position: relative;
+
     width: 100%;
     max-width: 650px;
+
     margin: auto;
     text-align: center;
 }
 
 .eyebrow {
     display: block;
-    margin-bottom: 26px;
-    color: var(--burgundy);
+
+    margin-bottom: 25px;
+
+    color: #b56580;
+
     font-family: Arial, sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 4px;
+
+    letter-spacing: 3px;
     line-height: 1.8;
+    text-transform: uppercase;
 }
 
 h1,
 h2 {
-    color: var(--dark-burgundy);
-    font-size: clamp(42px, 8vw, 76px);
+    color: var(--burgundy);
+
+    font-size: clamp(42px, 8vw, 72px);
     font-weight: normal;
-    line-height: 1.12;
-    letter-spacing: -2px;
+
+    line-height: 1.15;
+    letter-spacing: -1px;
 }
 
 h1 span,
 h2 span {
-    color: var(--dusty-pink);
+    color: #c16d8a;
     font-style: italic;
 }
 
 .welcome-description,
 .quiz-description,
 .story-description {
-    margin-top: 24px;
+    margin-top: 22px;
+
     color: var(--muted);
+
     font-size: 16px;
     line-height: 1.9;
 }
 
+
+/* ========================================
+   6. CUORI DECORATIVI
+======================================== */
+
 .heart-decoration {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+
     color: var(--dusty-pink);
-    font-size: 54px;
-    animation: heartbeat 2.4s ease-in-out infinite;
+    font-size: 52px;
+
+    text-shadow:
+        0 4px 16px rgba(217, 130, 160, 0.20);
+
+    animation: heartbeat 2.8s ease-in-out infinite;
+}
+
+.quiz-heart {
+    margin-bottom: 20px;
+
+    color: var(--dusty-pink);
+    font-size: 42px;
+
+    text-shadow:
+        0 4px 16px rgba(217, 130, 160, 0.20);
+
+    animation: heartbeat 2.8s ease-in-out infinite;
+}
+
+.story-heart {
+    margin-bottom: 20px;
+
+    color: var(--dusty-pink);
+    font-size: 52px;
 }
 
 @keyframes heartbeat {
@@ -186,88 +272,122 @@ h2 span {
         transform: scale(1);
     }
 
-    10% {
+    12% {
         transform: scale(1.08);
     }
 
-    20% {
+    24% {
         transform: scale(1);
     }
 
-    30% {
+    36% {
         transform: scale(1.05);
     }
 
-    40% {
+    48% {
         transform: scale(1);
     }
 }
 
 
 /* ========================================
-   5. PULSANTE INIZIALE
+   7. HELLO KITTY
+======================================== */
+
+.hello-kitty-decoration {
+    display: block;
+
+    width: 115px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 auto 24px;
+
+    filter:
+        drop-shadow(
+            0 6px 10px rgba(190, 105, 135, 0.14)
+        );
+
+    animation: hello-kitty-float 3.2s ease-in-out infinite;
+}
+
+@keyframes hello-kitty-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* ========================================
+   8. PULSANTI PRINCIPALI
 ======================================== */
 
 .primary-button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 14px;
 
-    margin-top: 38px;
-    padding: 17px 28px;
+    margin-top: 36px;
+    padding: 16px 28px;
 
-    color: var(--paper);
-    background: var(--burgundy);
+    color: white;
 
-    border: 1px solid var(--burgundy);
-    border-radius: 3px;
+    background:
+        linear-gradient(
+            135deg,
+            #eaa0b8,
+            #d982a0
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: var(--radius-button);
+
+    box-shadow: var(--shadow-button);
 
     font-family: Arial, sans-serif;
     font-size: 12px;
+    font-weight: 600;
+
     letter-spacing: 1px;
 
     cursor: pointer;
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.primary-button:hover {
-    color: var(--burgundy);
-    background: transparent;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(81, 39, 53, 0.08);
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
 
 .primary-button span {
     font-size: 17px;
+
+    transition: transform 0.25s ease;
 }
 
 .welcome-footer {
-    margin-top: 55px;
+    margin-top: 48px;
+
     color: var(--muted);
+
     font-size: 12px;
     font-style: italic;
 }
 
 
 /* ========================================
-   6. QUIZ INIZIALE
+   9. DOMANDA INIZIALE
 ======================================== */
 
 .quiz-content {
     max-width: 600px;
-}
-
-.quiz-heart {
-    margin-bottom: 20px;
-    color: var(--dusty-pink);
-    font-size: 42px;
-    animation: heartbeat 2.4s ease-in-out infinite;
 }
 
 .quiz-description {
@@ -278,6 +398,7 @@ h2 span {
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
     gap: 22px;
@@ -295,21 +416,22 @@ h2 span {
     padding: 13px 24px;
 
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: var(--radius-button);
 
     font-family: Arial, sans-serif;
     font-size: 13px;
     font-weight: 600;
+
     letter-spacing: 1px;
 
     cursor: pointer;
 
     transition:
-        background 0.25s ease,
+        background-color 0.25s ease,
         color 0.25s ease,
         border-color 0.25s ease,
         transform 0.2s ease,
-        font-size 0.25s ease;
+        box-shadow 0.25s ease;
 }
 
 .yes-button {
@@ -320,68 +442,117 @@ h2 span {
     background: var(--green);
 
     border-color: var(--green);
-}
 
-.yes-button:hover {
-    background: #52765c;
-    border-color: #52765c;
+    box-shadow:
+        0 5px 16px rgba(217, 130, 160, 0.20);
 }
 
 .no-button {
     position: relative;
     z-index: 3;
 
-    color: var(--red);
-    background: rgba(255, 250, 245, 0.8);
+    color: var(--burgundy);
+    background: white;
 
-    border-color: rgba(185, 94, 102, 0.5);
+    border-color: #edc2d0;
 
     transition:
         left 0.22s ease,
         top 0.22s ease,
         transform 0.22s ease,
-        background 0.2s ease;
-}
-
-.no-button:hover {
-    background: white;
+        background-color 0.2s ease;
 }
 
 .quiz-hint {
     min-height: 24px;
+
     margin-top: 14px;
+
     color: var(--muted);
+
     font-size: 12px;
     font-style: italic;
+    line-height: 1.7;
 }
 
 
 /* ========================================
-   7. PRIMA SCHERMATA DELLA STORIA
+   10. RACCONTO E RICORDI
 ======================================== */
 
-.story-heart {
-    margin-bottom: 22px;
-    color: var(--dusty-pink);
-    font-size: 55px;
+.story-content {
+    max-width: 650px;
+}
+
+.story-date {
+    margin: 20px 0 12px;
+
+    color: #9b6575;
+
+    font-size: 17px;
+    font-style: italic;
+
+    letter-spacing: 1px;
+}
+
+.story-divider {
+    margin: 25px 0;
+
+    color: #d982a0;
+
+    font-size: 17px;
+    letter-spacing: 5px;
 }
 
 .story-description {
-    margin-top: 25px;
+    max-width: 500px;
+
+    margin: 20px auto;
+
+    line-height: 1.95;
 }
 
 .story-note {
-    margin-top: 28px;
-    color: var(--burgundy);
+    max-width: 440px;
+
+    margin: 28px auto 0;
+
+    color: #925b6b;
+
     font-size: 15px;
     font-style: italic;
+
+    line-height: 1.9;
+}
+
+.story-footer {
+    margin-top: 22px;
+
+    color: #9e6578;
+
+    font-size: 14px;
+    font-style: italic;
+
     line-height: 1.8;
 }
 
+
+/* ========================================
+   11. SEZIONE DECORATIVA
+   Mantiene il supporto alla classe esistente
+======================================== */
+
 .coming-soon {
-    margin-top: 55px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(116, 59, 74, 0.15);
+    margin-top: 48px;
+    padding: 24px;
+
+    border: 1px solid rgba(217, 130, 160, 0.25);
+    border-radius: var(--radius-card);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 8px 25px rgba(132, 59, 82, 0.05);
 }
 
 .coming-soon span {
@@ -391,71 +562,150 @@ h2 span {
 
 .coming-soon p {
     margin-top: 10px;
+
     color: var(--muted);
+
     font-size: 12px;
     letter-spacing: 1px;
 }
 
+.story-content .primary-button {
+    margin-top: 28px;
+}
+
 
 /* ========================================
-   8. SMARTPHONE
+   12. INTERAZIONI AL PASSAGGIO DEL MOUSE
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .primary-button:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 12px 26px rgba(190, 105, 135, 0.30);
+
+        filter: brightness(1.04);
+    }
+
+    .primary-button:hover span {
+        transform: translateX(3px);
+    }
+
+    .answer-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .yes-button:hover {
+        background: #cf7796;
+        border-color: #cf7796;
+
+        box-shadow:
+            0 8px 20px rgba(217, 130, 160, 0.28);
+    }
+
+    .no-button:hover {
+        background: #fff5f8;
+    }
+}
+
+
+/* ========================================
+   13. TABLET E SMARTPHONE
 ======================================== */
 
 @media (max-width: 600px) {
 
     .screen {
-        padding: 32px 22px;
+        padding: 35px 22px;
     }
 
     .eyebrow {
-        margin-bottom: 24px;
-        font-size: 9px;
-        letter-spacing: 3px;
+        margin-bottom: 22px;
+
+        font-size: 10px;
+        letter-spacing: 2.5px;
     }
 
     h1,
     h2 {
-        font-size: clamp(39px, 11vw, 58px);
-        letter-spacing: -1.5px;
+        font-size: clamp(38px, 10vw, 58px);
+        letter-spacing: -0.7px;
     }
 
     .welcome-description,
     .quiz-description,
     .story-description {
         font-size: 15px;
+        line-height: 1.85;
     }
 
     .heart-decoration {
         font-size: 45px;
     }
 
+    .story-heart {
+        font-size: 46px;
+    }
+
+    .hello-kitty-decoration {
+        width: 95px;
+        margin-bottom: 20px;
+    }
+
     .primary-button {
-        margin-top: 32px;
-        padding: 16px 23px;
+        max-width: 100%;
+
+        margin-top: 30px;
+        padding: 15px 23px;
+
+        font-size: 11px;
     }
 
     .welcome-footer {
-        margin-top: 42px;
+        margin-top: 38px;
     }
 
-	.answer-area {
-		position: relative;
+    .answer-area {
+        min-height: 300px;
+        max-width: 420px;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 22px;
-
-		width: 100%;
-		max-width: 420px;
-		min-height: 300px;
-
-		margin: 25px auto 0;
-	}
+        margin: 25px auto 0;
+    }
 
     .answer-button {
         min-width: 100px;
         padding: 13px 18px;
+    }
+
+    .story-date {
+        font-size: 15px;
+    }
+
+    .story-divider {
+        margin: 22px 0;
+    }
+
+    .story-description {
+        margin: 18px auto;
+    }
+
+    .story-note {
+        margin-top: 24px;
+
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .story-footer {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+    .coming-soon {
+        margin-top: 38px;
+        padding: 20px;
     }
 
     .decoration-one {
@@ -469,7 +719,39 @@ h2 span {
 
 
 /* ========================================
-   9. ACCESSIBILITÀ
+   14. SCHERMI MOLTO PICCOLI
+======================================== */
+
+@media (max-width: 360px) {
+
+    .screen {
+        padding: 28px 17px;
+    }
+
+    h1,
+    h2 {
+        font-size: clamp(34px, 10vw, 42px);
+    }
+
+    .answer-area {
+        gap: 14px;
+    }
+
+    .answer-button {
+        min-width: 90px;
+        padding: 12px 14px;
+
+        font-size: 12px;
+    }
+
+    .story-description {
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   15. ACCESSIBILITÀ
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -479,279 +761,247 @@ h2 span {
     *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+
+    .hello-kitty-decoration {
+        animation: none;
+    }
 }
 
-.story-date {
-    margin: 20px 0 12px;
-    color: #9b6575;
-    font-size: 1.1rem;
+
+/* ========================================
+   16. FRASI IN EVIDENZA
+======================================== */
+
+.story-highlight {
+    max-width: 520px;
+    margin: 32px auto 0;
+    padding: 24px 22px;
+
+    color: var(--burgundy);
+    background: rgba(255, 253, 251, 0.72);
+
+    border: 1px solid rgba(217, 130, 160, 0.30);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+
+    font-size: 17px;
     font-style: italic;
-    letter-spacing: 1px;
-}
-
-.story-divider {
-    margin: 25px 0;
-    color: #b77b8d;
-    letter-spacing: 5px;
-    font-size: 1.1rem;
-}
-
-.story-description {
-    max-width: 480px;
-    margin: 18px auto;
     line-height: 1.9;
 }
 
-.story-note {
-    max-width: 420px;
-    margin: 28px auto;
-    color: #925b6b;
-    font-style: italic;
-    line-height: 1.8;
-}
-
-.story-footer {
-    margin-top: 25px;
-    font-size: 0.85rem;
-    opacity: 0.8;
-}
-
-.story-content .primary-button {
-    margin-top: 15px;
-}
-
-@media (max-width: 480px) {
-    .story-content {
-        width: 100%;
-        padding: 28px 22px;
-    }
-
-    .story-description {
-        font-size: 0.95rem;
-        line-height: 1.8;
-    }
-
-    .story-note {
-        font-size: 0.95rem;
-    }
-}
 
 /* ========================================
-   TEMA ROMANTICO HELLO KITTY 🎀
-   ======================================== */
+   17. LAYOUT SPECIALE DEL CAPITOLO VI
+======================================== */
 
-:root {
-    --hk-pink: #f4b6c8;
-    --hk-light-pink: #fde8ef;
-    --hk-pale-pink: #fff5f8;
-    --hk-cream: #fffaf3;
-    --hk-burgundy: #843b52;
-    --hk-text: #694450;
-    --hk-white: #ffffff;
-}
-
-/* Sfondo romantico */
-
-body {
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(244, 182, 200, 0.28),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(253, 232, 239, 0.9),
-            transparent 40%
-        ),
-        var(--hk-cream);
-
-    color: var(--hk-text);
-}
-
-/* Titoli */
-
-h1,
-h2 {
-    color: var(--hk-burgundy);
-    letter-spacing: -0.5px;
-}
-
-h1 span,
-h2 span {
-    color: #c16d8a;
-}
-
-/* Piccole etichette sopra i titoli */
-
-.eyebrow {
-    color: #b56580;
-    letter-spacing: 3px;
-    font-size: 0.72rem;
-}
-
-/* Cuori decorativi */
-
-.heart-decoration,
-.quiz-heart,
-.story-heart {
-    color: #d982a0;
-    text-shadow: 0 3px 15px rgba(217, 130, 160, 0.2);
-}
-
-/* Pulsanti principali */
-
-.primary-button {
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 30px;
-
-    background: linear-gradient(
-        135deg,
-        #eaa0b8,
-        #d982a0
-    );
-
-    color: var(--hk-white);
-
-    box-shadow:
-        0 8px 22px rgba(190, 105, 135, 0.2);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
-}
-
-.primary-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 26px rgba(190, 105, 135, 0.3);
-
-    filter: brightness(1.04);
-}
-
-/* Pulsanti della domanda */
-
-.answer-button {
-    border-radius: 25px;
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.yes-button {
-    background-color: #e99bb5;
-    color: white;
-    box-shadow: 0 5px 18px rgba(217, 130, 160, 0.2);
-}
-
-.no-button {
-    background-color: white;
-    color: var(--hk-burgundy);
-    border: 1px solid #edc2d0;
-}
-
-/* Contenuto delle scene */
-
-.story-content,
-.welcome-content,
-.quiz-content {
+.future-content {
     position: relative;
+    width: 100%;
+    max-width: 760px;
+    margin: auto;
+    text-align: center;
 }
 
-/* Decorazione delicata della seconda sezione */
+.future-header {
+    max-width: 620px;
+    margin: 0 auto 42px;
+    padding: 35px 28px;
 
-.coming-soon {
+    background: rgba(255, 253, 251, 0.72);
     border: 1px solid rgba(217, 130, 160, 0.25);
-    border-radius: 22px;
+    border-radius: var(--radius-card);
 
-    background: rgba(255, 255, 255, 0.55);
-
-    box-shadow:
-        0 8px 25px rgba(132, 59, 82, 0.05);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Linee decorative */
+.future-kicker {
+    margin-bottom: 12px;
 
-.story-divider {
-    color: #d982a0;
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
 }
 
-/* Testi romantici */
-
-.story-note,
-.story-footer,
-.welcome-footer {
-    color: #9e6578;
+.future-title {
+    font-size: clamp(42px, 7vw, 65px);
 }
 
-/* Piccoli schermi */
+.future-opening {
+    max-width: 440px;
+    margin: 25px auto 0;
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: clamp(2.4rem, 10vw, 3.5rem);
-    }
-
-    h2 {
-        font-size: clamp(1.8rem, 7vw, 2.5rem);
-    }
-
-    .primary-button {
-        max-width: 100%;
-    }
+    color: var(--burgundy);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.9;
 }
 
-/* Rispetta chi preferisce meno animazioni */
+.future-section {
+    position: relative;
 
-@media (prefers-reduced-motion: reduce) {
-    .primary-button,
-    .answer-button {
-        transition: none;
-    }
+    margin: 22px 0;
+    padding: 32px 36px;
+
+    text-align: left;
+
+    background: rgba(255, 253, 251, 0.78);
+
+    border: 1px solid rgba(217, 130, 160, 0.23);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
 }
 
-/* Hello Kitty nella schermata iniziale */
+.future-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.hello-kitty-decoration {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 14px;
+
+    color: white;
+    background: var(--dusty-pink);
+
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.future-section h3 {
+    margin-bottom: 18px;
+
+    color: var(--burgundy);
+
+    font-size: clamp(24px, 4vw, 31px);
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+.future-section p {
+    margin-top: 16px;
+
+    color: var(--text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.future-support {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(253, 232, 239, 0.90),
+            rgba(255, 253, 251, 0.94)
+        );
+}
+
+.future-ending {
+    margin-top: 38px;
+    padding: 42px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fce8ee,
+            #fff8f2
+        );
+
+    border: 1px solid rgba(217, 130, 160, 0.32);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.future-ending-heart,
+.future-final-heart {
     display: block;
 
-    width: 115px;
-    height: auto;
-
-    object-fit: contain;
-
-    margin: 0 auto 22px;
-
-    filter: drop-shadow(0 5px 8px rgba(190, 105, 135, 0.12));
-
-    animation: helloKittyFloat 3s ease-in-out infinite;
+    color: var(--dusty-pink);
+    font-size: 36px;
 }
 
-@keyframes helloKittyFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+.future-ending > p:first-of-type {
+    max-width: 530px;
+    margin: 18px auto;
 
-    50% {
-        transform: translateY(-6px);
-    }
+    color: var(--burgundy);
+
+    font-size: clamp(20px, 4vw, 27px);
+    font-style: italic;
+    line-height: 1.85;
 }
 
-@media (max-width: 480px) {
-    .hello-kitty-decoration {
-        width: 95px;
-        margin-bottom: 18px;
-    }
+.future-ending-divider {
+    margin: 20px 0;
+
+    color: var(--dusty-pink);
+    font-size: 35px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .hello-kitty-decoration {
-        animation: none;
+.future-ending .future-ending-small {
+    max-width: 430px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.future-final-heart {
+    margin-top: 22px;
+    font-size: 30px;
+}
+
+
+/* ========================================
+   18. RESPONSIVE DEL CAPITOLO VI
+======================================== */
+
+@media (max-width: 600px) {
+
+    .story-highlight {
+        padding: 21px 18px;
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .future-header {
+        margin-bottom: 28px;
+        padding: 30px 20px;
+    }
+
+    .future-opening {
+        font-size: 16px;
+    }
+
+    .future-section {
+        margin: 16px 0;
+        padding: 25px 21px;
+    }
+
+    .future-section h3 {
+        font-size: 25px;
+    }
+
+    .future-section p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .future-ending {
+        margin-top: 27px;
+        padding: 32px 21px;
+    }
+
+    .future-ending > p:first-of-type {
+        font-size: 21px;
     }
 }

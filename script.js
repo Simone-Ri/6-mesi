@@ -1,3 +1,4 @@
+
 "use strict";
 
 // ========================================
@@ -7,10 +8,30 @@
 const welcomeScreen = document.getElementById("welcome-screen");
 const quizScreen = document.getElementById("quiz-screen");
 const storyScreen = document.getElementById("story-screen");
+const memoryScreen = document.getElementById("memory-screen");
+const seaScreen = document.getElementById("sea-screen");
+const fourthScreen = document.getElementById("fourth-screen");
+const fifthScreen = document.getElementById("fifth-screen");
+const futureScreen = document.getElementById("future-screen");
 
 const startButton = document.getElementById("start-button");
 const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
+
+const continueStoryButton =
+    document.getElementById("continue-story-button");
+
+const continueMemoryButton =
+    document.getElementById("continue-memory-button");
+
+const continueSeaButton =
+    document.getElementById("continue-sea-button");
+
+const continueFourthButton =
+    document.getElementById("continue-fourth-button");
+
+const continueFifthButton =
+    document.getElementById("continue-fifth-button");
 
 const answerArea = document.getElementById("answer-area");
 const quizHint = document.getElementById("quiz-hint");
@@ -25,7 +46,12 @@ function showScreen(screenToShow) {
     const screens = [
         welcomeScreen,
         quizScreen,
-        storyScreen
+        storyScreen,
+        memoryScreen,
+        seaScreen,
+        fourthScreen,
+        fifthScreen,
+        futureScreen
     ];
 
     screens.forEach(function (screen) {
@@ -66,15 +92,13 @@ function moveNoButton() {
 
     noAttempts++;
 
-    // Il pulsante SÌ cresce gradualmente.
-	const yesScale = Math.min(
-		1 + noAttempts * 0.08,
-		1.5
-	);
+    const yesScale = Math.min(
+        1 + noAttempts * 0.08,
+        1.5
+    );
 
     yesButton.style.transform = `scale(${yesScale})`;
 
-    // Attiviamo il posizionamento assoluto al primo movimento.
     noButton.style.position = "absolute";
 
     const areaRect = answerArea.getBoundingClientRect();
@@ -84,17 +108,14 @@ function moveNoButton() {
     const margin = 12;
     const minDistance = Math.min(100, areaRect.width * 0.25);
 
-    // Posizione del SÌ rispetto all'area.
     const yesLeft = yesRect.left - areaRect.left;
     const yesTop = yesRect.top - areaRect.top;
     const yesRight = yesLeft + yesRect.width;
     const yesBottom = yesTop + yesRect.height;
 
-    // Posizione attuale del NO rispetto all'area.
     const currentX = noRect.left - areaRect.left;
     const currentY = noRect.top - areaRect.top;
 
-    // Limiti dell'area disponibile.
     const maxX = areaRect.width - noRect.width - margin;
     const maxY = areaRect.height - noRect.height - margin;
 
@@ -102,8 +123,6 @@ function moveNoButton() {
     let newY;
     let validPosition = false;
 
-    // Cerchiamo una posizione lontana da quella attuale
-    // e che non si sovrapponga al SÌ.
     for (let i = 0; i < 300; i++) {
 
         newX = margin + Math.random() * Math.max(0, maxX - margin);
@@ -121,9 +140,10 @@ function moveNoButton() {
             newY + noRect.height > yesTop - margin;
 
         if (!overlapsYes && distance >= minDistance) {
-			validPosition = true;
-			break;
-		}
+            validPosition = true;
+            break;
+        }
+
     }
 
     if (validPosition) {
@@ -131,7 +151,6 @@ function moveNoButton() {
         noButton.style.top = `${newY}px`;
     }
 
-    // Messaggi progressivi.
     if (noAttempts === 1) {
         quizHint.textContent = "Mmh... riprova. ♡";
     } else if (noAttempts === 2) {
@@ -141,10 +160,9 @@ function moveNoButton() {
     } else {
         quizHint.textContent = "Il SÌ ti sta aspettando! ♥";
     }
+
 }
 
-
-// Mouse: il pulsante scappa quando il puntatore si avvicina.
 noButton.addEventListener("pointerenter", function (event) {
 
     if (event.pointerType === "mouse") {
@@ -153,12 +171,9 @@ noButton.addEventListener("pointerenter", function (event) {
 
 });
 
-
-// Touch: il pulsante scappa quando viene toccato.
 noButton.addEventListener("click", function (event) {
 
     event.preventDefault();
-
     moveNoButton();
 
 });
@@ -172,8 +187,6 @@ yesButton.addEventListener("click", function () {
 
     quizHint.textContent = "Lo sapevo. ♥";
 
-    // Piccola pausa per rendere il passaggio più naturale.
-
     yesButton.textContent = "LO SAPEVO ♥";
     yesButton.disabled = true;
 
@@ -181,10 +194,64 @@ yesButton.addEventListener("click", function () {
 
         showScreen(storyScreen);
 
-        // Ripristino per eventuali visite successive.
         yesButton.textContent = "SÌ ♡";
         yesButton.disabled = false;
 
     }, 700);
+
+});
+
+
+// ========================================
+// 6. PASSAGGIO AL CAPITOLO II
+// ========================================
+
+continueStoryButton.addEventListener("click", function () {
+
+    showScreen(memoryScreen);
+
+});
+
+
+// ========================================
+// 7. PASSAGGIO AL CAPITOLO III
+// ========================================
+
+continueMemoryButton.addEventListener("click", function () {
+
+    showScreen(seaScreen);
+
+});
+
+
+// ========================================
+// 8. PASSAGGIO AL CAPITOLO IV
+// ========================================
+
+continueSeaButton.addEventListener("click", function () {
+
+    showScreen(fourthScreen);
+
+});
+
+
+// ========================================
+// 9. PASSAGGIO AL CAPITOLO V
+// ========================================
+
+continueFourthButton.addEventListener("click", function () {
+
+    showScreen(fifthScreen);
+
+});
+
+
+// ========================================
+// 10. PASSAGGIO AL CAPITOLO VI
+// ========================================
+
+continueFifthButton.addEventListener("click", function () {
+
+    showScreen(futureScreen);
 
 });

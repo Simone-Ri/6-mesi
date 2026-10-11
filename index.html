@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -21,14 +22,17 @@
         <div class="background-decoration decoration-one"></div>
         <div class="background-decoration decoration-two"></div>
 
+
         <!-- SCHERMATA INIZIALE -->
         <section id="welcome-screen" class="screen active">
 
             <div class="welcome-content">
-				<img
-				src="Hello-Kitty-angelo.png"
-				alt="Hello Kitty"
-				class="hello-kitty-decoration">
+
+                <img
+                    src="Hello-Kitty-angelo.png"
+                    alt="Hello Kitty"
+                    class="hello-kitty-decoration">
+
                 <span class="eyebrow">
                     UNA PICCOLA SORPRESA
                 </span>
@@ -47,7 +51,7 @@
                     Ti va di scoprirlo?
                 </p>
 
-                <button id="start-button" class="primary-button">
+                <button id="start-button" class="primary-button" type="button">
                     Inizia la sorpresa
                     <span aria-hidden="true">→</span>
                 </button>
@@ -111,129 +115,579 @@
 
 
         <!-- PRIMA SCENA: IL VOSTRO INCONTRO -->
-<section id="story-screen" class="screen" hidden>
+        <section id="story-screen" class="screen" hidden>
 
-    <div class="story-content">
+            <div class="story-content">
 
-        <span class="eyebrow">
-            CAPITOLO I · L'INIZIO
-        </span>
+                <span class="eyebrow">
+                    CAPITOLO I · L'INIZIO
+                </span>
 
-        <div class="story-heart" aria-hidden="true">
-            ♡
-        </div>
+                <div class="story-heart" aria-hidden="true">
+                    ♡
+                </div>
 
-        <p class="story-date">
-            Tutto è iniziato...
-        </p>
+                <p class="story-date">
+                    Tutto è iniziato...
+                </p>
 
-        <h2>
-            Un incontro<br>
-            <span>inaspettato.</span>
-        </h2>
+                <h2>
+                    Un incontro<br>
+                    <span>inaspettato.</span>
+                </h2>
 
-        <div class="story-divider" aria-hidden="true">
-            ✧ ── ♡ ── ✧
-        </div>
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
 
-        <p class="story-description">
-            Alla motorizzazione di Brescia,
-            due persone che ancora non sapevano
-            quanto sarebbero diventate importanti
-            l'una per l'altra.
-        </p>
+                <p class="story-description">
+                    Alla motorizzazione di Brescia,
+                    due persone che ancora non sapevano
+                    quanto sarebbero diventate importanti
+                    l'una per l'altra.
+                </p>
 
-        <p class="story-description">
-            Ci sono stati degli sguardi,
-            quei momenti in cui ti accorgi
-            di qualcuno senza sapere ancora
-            cosa succederà.
-        </p>
+                <p class="story-description">
+                    Ci sono stati degli sguardi,
+                    quei momenti in cui ti accorgi
+                    di qualcuno senza sapere ancora
+                    cosa succederà.
+                </p>
 
-        <p class="story-description">
-            E poi, sull'autobus, ho trovato
-            il coraggio di chiederti Instagram.
-        </p>
+                <p class="story-description">
+                    E poi, sull'autobus, ho trovato
+                    il coraggio di chiederti Instagram.
+                </p>
 
-        <p class="story-note">
-            Chissà se quel giorno avremmo mai
-            immaginato di arrivare fin qui.
-        </p>
+                <p class="story-note">
+                    Chissà se quel giorno avremmo mai
+                    immaginato di arrivare fin qui.
+                </p>
 
-        <button
-            id="continue-story-button"
-            class="primary-button"
-            type="button">
+                <button
+                    id="continue-story-button"
+                    class="primary-button"
+                    type="button">
 
-            Continua la nostra storia
-            <span aria-hidden="true">→</span>
+                    Continua la nostra storia
+                    <span aria-hidden="true">→</span>
 
-        </button>
+                </button>
 
-        <p class="story-footer">
-            Sei mesi dopo, sono ancora felice
-            di averti incontrata. ♡
-        </p>
+                <p class="story-footer">
+                    Sei mesi dopo, sono ancora felice
+                    di averti incontrata. ♡
+                </p>
 
-    </div>
+            </div>
 
-</section>
+        </section>
 
 
-<!-- SECONDA SCENA: I PRIMI MOMENTI -->
-<section id="memory-screen" class="screen" hidden>
+        <!-- SECONDA SCENA: I PRIMI MOMENTI -->
+        <section id="memory-screen" class="screen" hidden>
 
-    <div class="story-content">
+            <div class="story-content">
 
-        <span class="eyebrow">
-            CAPITOLO II · I PRIMI RICORDI
-        </span>
+                <span class="eyebrow">
+                    CAPITOLO II · I PRIMI RICORDI
+                </span>
 
-        <div class="story-heart" aria-hidden="true">
-            ♡
-        </div>
+                <div class="story-heart" aria-hidden="true">
+                    ♡
+                </div>
 
-        <h2>
-            E poi sei diventata<br>
-            <span>la mia persona.</span>
-        </h2>
+                <h2>
+                    E poi sei diventata<br>
+                    <span>la mia persona.</span>
+                </h2>
 
-        <div class="story-divider" aria-hidden="true">
-            ✧ ── ♡ ── ✧
-        </div>
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
 
-        <p class="story-description">
-            Poi è arrivato il nostro primo appuntamento
-            a Salò, con tutte quelle emozioni
-            che accompagnano le prime volte.
-        </p>
+                <p class="story-description">
+                    Poi è arrivato il nostro primo appuntamento
+                    a Salò, con tutte quelle emozioni
+                    che accompagnano le prime volte.
+                </p>
 
-        <p class="story-description">
-            E c'è stato quel bacio sulla panchina
-            a Villanuova, uno di quei ricordi
-            che non hanno bisogno di una fotografia
-            per restare impressi.
-        </p>
+                <p class="story-description">
+                    E c'è stato quel bacio sulla panchina
+                    a Villanuova, uno di quei ricordi
+                    che non hanno bisogno di una fotografia
+                    per restare impressi.
+                </p>
 
-        <p class="story-note">
-            Perché non tutti i momenti più belli
-            devono essere fotografati.
-            Alcuni basta viverli insieme.
-        </p>
+                <p class="story-note">
+                    Perché non tutti i momenti più belli
+                    devono essere fotografati.
+                    Alcuni basta viverli insieme.
+                </p>
 
-        <div class="coming-soon">
-            <span aria-hidden="true">♡</span>
-            <p>
-                E questa è soltanto una piccola parte
-                della nostra storia.
-            </p>
-        </div>
+                <button
+                    id="continue-memory-button"
+                    class="primary-button"
+                    type="button">
 
-    </div>
+                    Un ricordo divertente
+                    <span aria-hidden="true">♡</span>
 
-</section>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TERZA SCENA: IL RICORDO AL MARE -->
+        <section id="sea-screen" class="screen" hidden>
+
+            <div class="story-content">
+
+                <span class="eyebrow">
+                    CAPITOLO III · I NOSTRI RICORDI
+                </span>
+
+                <div class="story-heart" aria-hidden="true">
+                    ♡
+                </div>
+
+                <h2>
+                    Noi due,<br>
+                    <span>anche nei disastri.</span>
+                </h2>
+
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
+
+                <p class="story-description">
+                    Ti ricordi quel giorno al mare?
+                    Io che mi lancio tra le tue braccia
+                    mentre stavamo facendo un video...
+                </p>
+
+                <p class="story-description">
+                    E alla fine siamo caduti per terra.
+                    Tu hai persino pensato di esserti rotta una gamba!
+                    Per fortuna era soltanto una botta.
+                </p>
+
+                <p class="story-note">
+                    Forse non è stato il nostro momento più elegante,
+                    ma è uno di quei ricordi che mi fanno sorridere.
+                    Perché con te riesco a trovare qualcosa di bello
+                    anche nei momenti più assurdi.
+                </p>
+
+                <div class="story-divider" aria-hidden="true">
+                    ♡ · ♡ · ♡
+                </div>
+
+                <p class="story-note">
+                    E questa è soltanto una piccola parte
+                    della nostra storia...
+                </p>
+				
+				<p class="story-footer">
+					E il bello deve ancora venire. ♡
+				</p>
+
+				<button
+					id="continue-sea-button"
+					class="primary-button"
+					type="button">
+					E c'è ancora tanto da raccontare
+					<span aria-hidden="true">→</span>
+				</button>
+
+            </div>
+
+        </section>
+		
+        <!-- QUARTA SCENA: I PICCOLI MOMENTI -->
+        <section id="fourth-screen" class="screen" hidden>
+            <div class="story-content">
+
+                <span class="eyebrow">
+                    CAPITOLO IV · IL BELLO DEI PICCOLI MOMENTI
+                </span>
+
+                <div class="story-heart" aria-hidden="true">♡</div>
+
+                <h2>
+                    Le cose più belle<br>
+                    <span>sono anche le più semplici.</span>
+                </h2>
+
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
+
+                <p class="story-description">
+                    E poi, amore mio, sono arrivati altri momenti
+                    che porterò sempre con me.
+                </p>
+
+                <p class="story-description">
+                    La prima volta che abbiamo dormito insieme.
+                    Non ricordo ogni dettaglio di quella notte,
+                    ma ricordo come mi sentivo: averti tra le braccia,
+                    dormire accanto a te e sentirmi al sicuro,
+                    stare semplicemente bene.
+                </p>
+
+                <p class="story-description">
+                    E poi svegliarmi e trovarti ancora lì accanto a me…
+                    beh, direi che è uno dei modi migliori per iniziare
+                    una giornata. Ahaha. ♡
+                </p>
+
+                <div class="story-divider" aria-hidden="true">
+                    ♡ · ♡ · ♡
+                </div>
+
+                <p class="story-description">
+                    E come dimenticare il nostro primo giro in moto?
+                </p>
+
+                <p class="story-description">
+                    Quel giorno ti ho portata a Villanuova, dove abito,
+                    anche perché avevo ancora il foglio rosa e non volevo
+                    allontanarmi troppo. Siamo andati a una panchina
+                    e poi all'Italmark.
+                </p>
+
+                <p class="story-description">
+                    Magari per qualcun altro sarebbe stata una giornata
+                    normalissima, ma per me era un altro piccolo pezzo
+                    della nostra storia. Una di quelle giornate semplici
+                    che diventano speciali soltanto perché le vivi
+                    con la persona giusta.
+                </p>
+
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
+
+                <p class="story-description">
+                    E poi ci sei tu, con i tuoi sorrisi, il tuo modo
+                    di stare al gioco e quegli occhi nei quali
+                    potrei perdermi per ore.
+                </p>
+
+                <p class="story-description">
+                    A volte ci guardiamo, sorridiamo e io mi dimentico
+                    completamente di tutto il resto. È come se mi
+                    catturassi, come se fossi un buco nero e io non
+                    potessi più scappare, proprio come la luce
+                    che non riesce a uscirne.
+                </p>
+
+                <p class="story-note">
+                    E sai una cosa, amore?
+                </p>
+
+                <p class="story-highlight">
+                    Se perdermi nei tuoi occhi significa dimenticarmi
+                    per un po' del mondo intero, allora non ho proprio
+                    intenzione di cercare una via d'uscita. ♡
+                </p>
+
+                <button
+                    id="continue-fourth-button"
+                    class="primary-button"
+                    type="button">
+                    Quello che amo di te
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- QUINTA SCENA: QUELLO CHE AMO DI TE -->
+        <section id="fifth-screen" class="screen" hidden>
+            <div class="story-content">
+
+                <span class="eyebrow">
+                    CAPITOLO V · QUELLO CHE AMO DI TE
+                </span>
+
+                <div class="story-heart" aria-hidden="true">♡</div>
+
+                <h2>
+                    Non basterebbero<br>
+                    <span>tutte le parole del mondo.</span>
+                </h2>
+
+                <div class="story-divider" aria-hidden="true">
+                    ✧ ── ♡ ── ✧
+                </div>
+
+                <p class="story-description">
+                    Amore mio, potrei stare qui per ore a dirti
+                    tutte le cose che amo di te, e probabilmente
+                    non basterebbero comunque.
+                </p>
+
+                <p class="story-description">
+                    Amo il tuo sorriso, il tuo modo di scherzare
+                    con me e quegli occhi nei quali riesci
+                    a farmi perdere completamente.
+                </p>
+
+                <p class="story-description">
+                    Ma c'è qualcosa che per me vale ancora di più.
+                </p>
+
+                <p class="story-description">
+                    È il modo in cui cerchi di farmi stare bene.
+                    Come presti attenzione anche alle piccolezze,
+                    a quelle cose che magari per qualcun altro
+                    non significherebbero nulla, ma che dimostrano
+                    quanto ti importi di me.
+                </p>
+
+                <p class="story-description">
+                    Mi colpisce il fatto che tu cerchi di evitare
+                    tutto ciò che potrebbe farmi stare male
+                    o allontanarmi, che tu faccia attenzione
+                    a ciò che provo e che ti impegni ogni giorno
+                    per rendere migliore quello che abbiamo.
+                </p>
+
+                <p class="story-description">
+                    E soprattutto amo vedere quanto cerchi
+                    di migliorarti, quanto tu voglia crescere
+                    e diventare una versione sempre migliore
+                    di te stessa, anche per me e per noi.
+                </p>
+
+                <p class="story-description">
+                    Voglio che tu sappia che vedo questi tuoi sforzi.
+                    Magari non riesco sempre a dirtelo nel modo giusto,
+                    ma non sono cose che considero scontate.
+                </p>
+
+                <p class="story-description">
+                    Perché amare qualcuno non significa soltanto
+                    dirgli «ti amo». Significa anche dimostrarglielo
+                    nelle piccole cose, nei gesti che magari nessun
+                    altro nota, ma che fanno la differenza.
+                </p>
+
+                <p class="story-note">
+                    E io, amore mio, queste cose le vedo.
+                    <br>
+                    E le amo.
+                </p>
+
+                <p class="story-highlight">
+                    Amo te, non perché tu debba essere perfetta
+                    per me, ma perché sei tu, e perché vedo
+                    quanto cuore metti in noi. ♡
+                </p>
+
+                <button
+                    id="continue-fifth-button"
+                    class="primary-button"
+                    type="button">
+                    Il futuro che sogno con te
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- SESTA SCENA: IL FUTURO INSIEME -->
+        <section id="future-screen" class="screen" hidden>
+            <div class="future-content">
+
+                <header class="future-header">
+
+                    <span class="eyebrow">
+                        CAPITOLO VI · IL NOSTRO DOMANI
+                    </span>
+
+                    <div class="story-heart" aria-hidden="true">♡</div>
+
+                    <p class="future-kicker">
+                        Un sogno che parla di noi
+                    </p>
+
+                    <h2 class="future-title">
+                        Il futuro che<br>
+                        <span>sogno con te.</span>
+                    </h2>
+
+                    <div class="story-divider" aria-hidden="true">
+                        ✧ ── ♡ ── ✧
+                    </div>
+
+                    <p class="future-opening">
+                        Amore mio, se penso al futuro,
+                        la prima cosa che immagino siamo noi due.
+                    </p>
+
+                </header>
+
+
+                <article class="future-section">
+                    <span class="future-number">01</span>
+
+                    <h3>La vita che immagino</h3>
+
+                    <p>
+                        Immagino di svegliarmi ogni mattina nello stesso
+                        letto in cui dormi tu, di averti accanto e di poter
+                        iniziare le mie giornate con te. Ma sai una cosa?
+                        Quando penso a noi, non riesco a immaginarci
+                        soltanto come una coppia. Io ci vedo una famiglia,
+                        due persone che hanno scelto di costruire qualcosa
+                        insieme e che continuano a scegliersi anche con
+                        il passare degli anni.
+                    </p>
+
+                    <p>
+                        Sogno di viaggiare tanto con te, di scoprire posti
+                        nuovi e di condividere quante più esperienze
+                        possibili. Voglio vivere tutto questo al tuo fianco,
+                        ma soprattutto spero che, ovunque ci porterà
+                        la vita, alla fine della giornata ci saremo ancora
+                        noi due.
+                    </p>
+                </article>
+
+
+                <article class="future-section">
+                    <span class="future-number">02</span>
+
+                    <h3>Noi, anche nelle difficoltà</h3>
+
+                    <p>
+                        Perché non desidero una vita senza problemi.
+                        Desidero una vita in cui, anche quando i problemi
+                        arriveranno, sapremo restare stretti e affrontarli
+                        insieme. Vorrei che riuscissimo a fregarcene
+                        di quello che pensano gli altri, concentrandoci
+                        su ciò che siamo noi e su quello che vogliamo
+                        costruire.
+                    </p>
+
+                    <p>
+                        Io desidero il meglio per te, amore mio,
+                        e per noi. Voglio vederti felice, voglio ascoltarti
+                        quando avrai bisogno di parlare e voglio continuare
+                        a impegnarmi per questa relazione, cercando
+                        di sbagliare il meno possibile e di renderti felice
+                        ogni giorno.
+                    </p>
+
+                    <p>
+                        So che non sarò perfetto e che non sempre farò
+                        tutto nel modo giusto. Ma voglio imparare,
+                        migliorare e fare del mio meglio per noi.
+                        Voglio sceglierti ogni giorno, non soltanto
+                        quando è tutto bello e facile, ma anche quando
+                        serviranno pazienza, comprensione e impegno.
+                    </p>
+                </article>
+
+
+                <article class="future-section future-support">
+                    <span class="future-number">03</span>
+
+                    <h3>Voglio esserci per te</h3>
+
+                    <p>
+                        E soprattutto voglio che tu sappia una cosa:
+                        io voglio esserci.
+                    </p>
+
+                    <p>
+                        Voglio starti accanto anche nelle giornate
+                        più scure, quando magari non avrai voglia
+                        di sorridere o quando tutto ti sembrerà più
+                        difficile. Voglio essere la persona sulla quale
+                        potrai appoggiarti, la tua spalla quando avrai
+                        bisogno di piangere e qualcuno su cui potrai
+                        contare quando sentirai di non farcela da sola.
+                    </p>
+
+                    <p>
+                        Non voglio che tu debba affrontare tutto da sola,
+                        perché mi piace essere al tuo fianco. Mi piace
+                        poterti aiutare, ascoltarti e sapere che posso fare
+                        qualcosa per farti stare meglio.
+                    </p>
+                </article>
+
+
+                <article class="future-section">
+                    <span class="future-number">04</span>
+
+                    <h3>Se penso al domani, vedo te</h3>
+
+                    <p>
+                        Non so esattamente cosa ci riserverà il futuro,
+                        ma so cosa spero di trovare quando lo immagino:
+                        te.
+                    </p>
+
+                    <p>
+                        Te al mio fianco, noi due che cresciamo insieme,
+                        che impariamo dai nostri errori e che continuiamo
+                        a costruire la nostra storia, un giorno alla volta.
+                    </p>
+
+                    <p>
+                        E se c'è una cosa che desidero più di tutte,
+                        è che un giorno, guardandoci indietro, potremo
+                        sorridere pensando a quanto eravamo piccoli
+                        all'inizio e a quanta strada avremo fatto insieme.
+                    </p>
+
+                    <p>
+                        Perché, amore mio, io non sogno soltanto
+                        di stare con te oggi.
+                    </p>
+                </article>
+
+
+                <footer class="future-ending">
+                    <div class="future-ending-heart" aria-hidden="true">
+                        ♡
+                    </div>
+
+                    <p>
+                        Io sogno di continuare a sceglierti anche domani,
+                        dopodomani e in tutti i giorni che la vita
+                        ci concederà.
+                    </p>
+
+                    <div class="future-ending-divider" aria-hidden="true">
+                        ∞
+                    </div>
+
+                    <p class="future-ending-small">
+                        E spero davvero che quel futuro,
+                        in qualunque forma arriverà,
+                        abbia sempre un posto per noi due.
+                    </p>
+
+                    <span class="future-final-heart" aria-hidden="true">
+                        ♡
+                    </span>
+                </footer>
+
+            </div>
+        </section>
 
     </main>
 
 </body>
 </html>
+```
