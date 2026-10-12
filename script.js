@@ -13,6 +13,31 @@ const seaScreen = document.getElementById("sea-screen");
 const fourthScreen = document.getElementById("fourth-screen");
 const fifthScreen = document.getElementById("fifth-screen");
 const futureScreen = document.getElementById("future-screen");
+const galleryScreen = document.getElementById("gallery-screen");
+
+const openGalleryButton =
+    document.getElementById("open-gallery-button");
+
+const galleryBackButton =
+    document.getElementById("gallery-back-button");
+
+const kittySurpriseButton =
+    document.getElementById("kitty-surprise-button");
+
+const filmFrames =
+    document.querySelectorAll(".film-frame");
+
+const memoryDialog =
+    document.getElementById("memory-dialog");
+
+const closeMemoryDialogButton =
+    document.getElementById("close-memory-dialog");
+
+const memoryDialogTitle =
+    document.getElementById("memory-dialog-title");
+
+const memoryDialogDescription =
+    document.getElementById("memory-dialog-description");
 
 const startButton = document.getElementById("start-button");
 const yesButton = document.getElementById("yes-button");
@@ -43,16 +68,17 @@ const quizHint = document.getElementById("quiz-hint");
 
 function showScreen(screenToShow) {
 
-    const screens = [
-        welcomeScreen,
-        quizScreen,
-        storyScreen,
-        memoryScreen,
-        seaScreen,
-        fourthScreen,
-        fifthScreen,
-        futureScreen
-    ];
+	const screens = [
+		welcomeScreen,
+		quizScreen,
+		storyScreen,
+		memoryScreen,
+		seaScreen,
+		fourthScreen,
+		fifthScreen,
+		futureScreen,
+		galleryScreen
+	];
 
     screens.forEach(function (screen) {
 
@@ -253,5 +279,98 @@ continueFourthButton.addEventListener("click", function () {
 continueFifthButton.addEventListener("click", function () {
 
     showScreen(futureScreen);
+
+});
+
+// ========================================
+// 11. APERTURA DEL RULLINO
+// ========================================
+
+openGalleryButton.addEventListener("click", function () {
+
+    showScreen(galleryScreen);
+
+});
+
+
+// ========================================
+// 12. RITORNO ALLA STORIA
+// ========================================
+
+galleryBackButton.addEventListener("click", function () {
+
+    showScreen(futureScreen);
+
+});
+
+
+// ========================================
+// 13. APERTURA DELLE FOTOGRAFIE
+// ========================================
+
+filmFrames.forEach(function (frame) {
+
+    frame.addEventListener("click", function () {
+
+        const title = frame.dataset.title;
+        const description = frame.dataset.description;
+
+        memoryDialogTitle.textContent = title;
+        memoryDialogDescription.textContent = description;
+
+        memoryDialog.showModal();
+
+    });
+
+});
+
+
+// ========================================
+// 14. CHIUSURA DELLA FOTOGRAFIA
+// ========================================
+
+closeMemoryDialogButton.addEventListener("click", function () {
+
+    memoryDialog.close();
+
+});
+
+
+// Chiude la finestra cliccando sullo sfondo.
+
+memoryDialog.addEventListener("click", function (event) {
+
+    if (event.target === memoryDialog) {
+        memoryDialog.close();
+    }
+
+});
+
+
+// ========================================
+// 15. SORPRESA HELLO KITTY
+// ========================================
+
+kittySurpriseButton.addEventListener("click", function () {
+
+    memoryDialogTitle.textContent = "Una cosa che voglio dirti...";
+
+    memoryDialogDescription.textContent =
+        "Tra tutti i ricordi che potrei conservare, " +
+        "il mio preferito è sapere che ne abbiamo ancora " +
+        "tantissimi da vivere insieme. Ti amo, stellina. ♡";
+
+    memoryDialog.classList.add("kitty-secret-dialog");
+
+    memoryDialog.showModal();
+
+});
+
+
+// Ripristina il contenuto e lo stile quando la finestra si chiude.
+
+memoryDialog.addEventListener("close", function () {
+
+    memoryDialog.classList.remove("kitty-secret-dialog");
 
 });

@@ -1005,3 +1005,703 @@ h2 span {
         font-size: 21px;
     }
 }
+
+/* ========================================
+   19. RULLINO FOTOGRAFICO
+======================================== */
+
+.gallery-content {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+}
+
+.gallery-header {
+    max-width: 650px;
+    margin: 0 auto 55px;
+}
+
+.gallery-kitty {
+    display: block;
+    width: 95px;
+    height: auto;
+    margin: 0 auto 24px;
+
+    filter: drop-shadow(
+        0 8px 14px rgba(190, 105, 135, 0.18)
+    );
+
+    animation: hello-kitty-float 3.2s ease-in-out infinite;
+}
+
+.gallery-kicker {
+    margin-bottom: 15px;
+
+    color: var(--muted);
+    font-size: 15px;
+    font-style: italic;
+}
+
+.gallery-title {
+    font-size: clamp(43px, 7vw, 68px);
+}
+
+.gallery-description {
+    max-width: 510px;
+    margin: 18px auto;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.film-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+
+    max-width: 950px;
+    margin: 0 auto 22px;
+
+    text-align: left;
+}
+
+.film-label {
+    color: #b56580;
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.film-heading h3 {
+    margin-top: 8px;
+
+    color: var(--burgundy);
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: normal;
+}
+
+.film-counter {
+    flex-shrink: 0;
+
+    padding: 9px 12px;
+
+    color: var(--burgundy);
+    background: rgba(255, 253, 251, 0.8);
+
+    border: 1px solid rgba(217, 130, 160, 0.25);
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   20. PELLICOLA
+======================================== */
+
+.film-shell {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 14px 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #77384d,
+            #4f2737
+        );
+
+    border: 1px solid rgba(89, 43, 59, 0.35);
+    border-radius: 15px;
+
+    box-shadow:
+        0 22px 55px rgba(89, 43, 59, 0.19),
+        inset 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.film-perforations {
+    height: 13px;
+    margin: 0 12px;
+
+    background-image:
+        radial-gradient(
+            ellipse at center,
+            #fff1e8 0 42%,
+            transparent 46%
+        );
+
+    background-size: 27px 13px;
+    background-repeat: repeat-x;
+}
+
+.film-strip {
+    display: flex;
+    gap: 0;
+
+    width: 100%;
+    padding: 15px 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+
+    scrollbar-color: #e5a2b9 #71374a;
+}
+
+.film-frame {
+    flex: 0 0 25%;
+    min-width: 205px;
+    max-width: 250px;
+
+    padding: 12px 14px 10px;
+
+    color: #fff8f2;
+    background: transparent;
+
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+
+    text-align: left;
+    cursor: pointer;
+
+    scroll-snap-align: start;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.frame-number {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #f2c7d5;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.frame-photo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    border: 5px solid #fff8f2;
+    border-bottom-width: 19px;
+
+    box-shadow: 0 5px 12px rgba(35, 10, 20, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.photo-one {
+    background:
+        radial-gradient(circle at 30% 25%, #fff8f2, transparent 35%),
+        linear-gradient(145deg, #eec2d0, #bc728e);
+}
+
+.photo-two {
+    background:
+        radial-gradient(circle at 70% 30%, #fff8f2, transparent 30%),
+        linear-gradient(145deg, #f8e4e9, #d99bb1);
+}
+
+.photo-three {
+    background:
+        radial-gradient(circle at 40% 30%, #fff8f2, transparent 35%),
+        linear-gradient(145deg, #df9bb3, #a45e79);
+}
+
+.photo-four {
+    background:
+        radial-gradient(circle at 70% 20%, #fff8f2, transparent 30%),
+        linear-gradient(145deg, #f6d4c8, #d982a0);
+}
+
+.photo-five {
+    background:
+        radial-gradient(circle at 25% 30%, #fff8f2, transparent 30%),
+        linear-gradient(145deg, #c9829c, #7f4058);
+}
+
+.photo-six {
+    background:
+        radial-gradient(circle at 65% 35%, #fff8f2, transparent 35%),
+        linear-gradient(145deg, #f7e5d8, #d99aae);
+}
+
+.photo-seven {
+    background:
+        radial-gradient(circle at 35% 25%, #fff8f2, transparent 30%),
+        linear-gradient(145deg, #eab6c9, #b66d89);
+}
+
+.photo-eight {
+    background:
+        radial-gradient(circle at 65% 30%, #fff8f2, transparent 35%),
+        linear-gradient(145deg, #f6dbe3, #c47c98);
+}
+
+.photo-placeholder {
+    color: rgba(255, 253, 251, 0.9);
+
+    font-size: 53px;
+    text-shadow: 0 3px 12px rgba(89, 43, 59, 0.12);
+}
+
+.photo-caption {
+    position: absolute;
+    right: 0;
+    bottom: -19px;
+    left: 0;
+
+    color: #8d5266;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 9px;
+    font-style: italic;
+
+    text-align: center;
+}
+
+.frame-label {
+    display: block;
+
+    margin-top: 13px;
+
+    color: #f5dce4;
+
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.film-scroll-hint {
+    margin-top: 17px;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ========================================
+   21. SORPRESA HELLO KITTY
+======================================== */
+
+.kitty-surprise {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    width: 100%;
+    max-width: 540px;
+    margin: 48px auto 0;
+    padding: 17px 20px;
+
+    color: var(--text);
+    background: rgba(255, 253, 251, 0.82);
+
+    border: 1px solid rgba(217, 130, 160, 0.32);
+    border-radius: 22px;
+
+    box-shadow: var(--shadow-soft);
+
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.kitty-surprise-image {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 64px;
+    height: 64px;
+
+    background: #fde8ef;
+    border-radius: 50%;
+}
+
+.kitty-surprise-image img {
+    width: 47px;
+    height: 47px;
+
+    object-fit: contain;
+}
+
+.kitty-sparkle {
+    position: absolute;
+    top: -4px;
+    right: -2px;
+
+    color: var(--dusty-pink);
+    font-size: 21px;
+}
+
+.kitty-surprise-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    flex: 1;
+}
+
+.kitty-surprise-title {
+    color: var(--burgundy);
+    font-size: 17px;
+}
+
+.kitty-surprise-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.kitty-surprise-arrow {
+    color: var(--dusty-pink);
+    font-size: 23px;
+}
+
+
+/* ========================================
+   22. FINALE DEL RULLINO
+======================================== */
+
+.gallery-ending {
+    max-width: 560px;
+    margin: 55px auto 0;
+    padding: 35px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(253, 232, 239, 0.85),
+            rgba(255, 253, 251, 0.9)
+        );
+
+    border: 1px solid rgba(217, 130, 160, 0.25);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.gallery-ending-heart {
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--dusty-pink);
+    font-size: 34px;
+}
+
+.gallery-ending > p:first-of-type {
+    color: var(--burgundy);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.gallery-infinity {
+    display: block;
+    margin: 18px 0;
+
+    color: var(--dusty-pink);
+    font-size: 40px;
+}
+
+.gallery-ending .gallery-ending-small {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   23. FINESTRA DEL RICORDO
+======================================== */
+
+.memory-dialog {
+    width: min(92vw, 470px);
+    max-width: none;
+    max-height: 90vh;
+    max-height: 90svh;
+
+    margin: auto;
+    padding: 0;
+
+    overflow: auto;
+
+    color: var(--text);
+    background: transparent;
+
+    border: none;
+}
+
+.memory-dialog::backdrop {
+    background: rgba(55, 26, 39, 0.72);
+    backdrop-filter: blur(7px);
+}
+
+.memory-dialog-card {
+    position: relative;
+
+    padding: 34px 28px 30px;
+
+    background: var(--paper);
+
+    border: 1px solid rgba(217, 130, 160, 0.45);
+    border-radius: 25px;
+
+    box-shadow: 0 25px 80px rgba(30, 10, 20, 0.25);
+
+    text-align: center;
+    animation: memory-pop 0.3s ease both;
+}
+
+@keyframes memory-pop {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.memory-close-button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    color: var(--burgundy);
+    background: var(--light-pink);
+
+    border: 0;
+    border-radius: 50%;
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.memory-dialog-kicker {
+    display: block;
+    margin: 8px 0 22px;
+
+    color: #b56580;
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.memory-dialog-art {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 260px;
+    margin: 0 auto 23px;
+
+    background:
+        radial-gradient(circle at 25% 20%, #fffdfb, transparent 30%),
+        linear-gradient(145deg, #f9e0e8, #d982a0);
+
+    border: 8px solid white;
+    outline: 1px solid rgba(217, 130, 160, 0.25);
+
+    box-shadow: 0 8px 25px rgba(132, 59, 82, 0.10);
+}
+
+.memory-dialog-art span {
+    color: white;
+    font-size: 65px;
+}
+
+.memory-dialog-card h3 {
+    color: var(--burgundy);
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.memory-dialog-card > p {
+    margin-top: 14px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.memory-dialog-divider {
+    margin: 23px 0;
+
+    color: var(--dusty-pink);
+    letter-spacing: 4px;
+}
+
+.memory-dialog-footer {
+    color: var(--burgundy);
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ========================================
+   24. ADATTAMENTO PER TELEFONI
+======================================== */
+
+@media (max-width: 600px) {
+
+    .gallery-header {
+        margin-bottom: 38px;
+    }
+
+    .gallery-kitty {
+        width: 82px;
+    }
+
+    .gallery-description {
+        font-size: 14px;
+    }
+
+    .film-heading {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .film-heading h3 {
+        font-size: 22px;
+    }
+
+    .film-counter {
+        padding: 8px;
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .film-frame {
+        flex-basis: 70%;
+        min-width: 220px;
+        max-width: 270px;
+    }
+
+    .kitty-surprise {
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .kitty-surprise-image {
+        width: 55px;
+        height: 55px;
+    }
+
+    .kitty-surprise-image img {
+        width: 41px;
+        height: 41px;
+    }
+
+    .kitty-surprise-title {
+        font-size: 15px;
+    }
+
+    .kitty-surprise-subtitle {
+        font-size: 11px;
+    }
+
+    .gallery-ending {
+        margin-top: 40px;
+        padding: 29px 21px;
+    }
+
+    .gallery-ending > p:first-of-type {
+        font-size: 18px;
+    }
+
+    .memory-dialog-card {
+        padding: 32px 21px 25px;
+    }
+}
+
+
+/* ========================================
+   25. INTERAZIONI DEL RULLINO
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .film-frame:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .film-frame:hover .frame-photo {
+        transform: translateY(-4px) rotate(-1deg);
+
+        box-shadow: 0 10px 20px rgba(35, 10, 20, 0.30);
+    }
+
+    .kitty-surprise:hover {
+        transform: translateY(-3px);
+
+        border-color: rgba(217, 130, 160, 0.65);
+
+        box-shadow:
+            0 15px 35px rgba(132, 59, 82, 0.10);
+    }
+
+    .memory-close-button:hover {
+        background: #f4c5d3;
+    }
+}
+
+
+/* ========================================
+   26. TESTO INTRODUTTIVO DEL RULLINO
+======================================== */
+
+.gallery-intro-note {
+    margin-top: 20px;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.8;
+}
