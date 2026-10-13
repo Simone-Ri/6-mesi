@@ -1742,3 +1742,52 @@ h2 span {
     max-height: none !important;
     object-fit: contain;
 }
+
+/* Sistemazione della finestrella dei ricordi su telefono */
+@media (max-width: 600px) {
+
+    .memory-dialog[open] {
+        width: calc(100% - 32px);
+        max-width: 420px;
+        max-height: 88vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .memory-dialog-card {
+        padding: 22px 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .memory-dialog-art {
+        width: 100%;
+        max-width: 260px;
+        height: auto !important;
+        max-height: none;
+        margin: 16px auto;
+        overflow: visible;
+    }
+
+    .memory-dialog-art img {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        max-height: 45vh !important;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .memory-dialog-card h3 {
+        position: relative;
+        margin: 18px 0 10px;
+        line-height: 1.3;
+    }
+
+    .memory-dialog-card p {
+        position: relative;
+        margin: 0 0 16px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+    }
+}
