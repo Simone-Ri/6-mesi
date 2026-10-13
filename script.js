@@ -38,6 +38,9 @@ const memoryDialogTitle =
 
 const memoryDialogDescription =
     document.getElementById("memory-dialog-description");
+	
+const memoryDialogImage =
+    document.getElementById("memory-dialog-image");
 
 const startButton = document.getElementById("start-button");
 const yesButton = document.getElementById("yes-button");
@@ -309,19 +312,25 @@ galleryBackButton.addEventListener("click", function () {
 // ========================================
 
 filmFrames.forEach(function (frame) {
-
     frame.addEventListener("click", function () {
-
         const title = frame.dataset.title;
         const description = frame.dataset.description;
+        const image = frame.querySelector(".frame-photo img");
 
         memoryDialogTitle.textContent = title;
         memoryDialogDescription.textContent = description;
 
+        if (image) {
+            memoryDialogImage.src = image.src;
+            memoryDialogImage.alt = title;
+            memoryDialogImage.style.display = "block";
+        } else {
+            memoryDialogImage.removeAttribute("src");
+            memoryDialogImage.style.display = "none";
+        }
+
         memoryDialog.showModal();
-
     });
-
 });
 
 

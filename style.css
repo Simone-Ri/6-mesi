@@ -1705,3 +1705,40 @@ h2 span {
     font-style: italic;
     line-height: 1.8;
 }
+
+.frame-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Correzione della finestra dei ricordi */
+.memory-dialog[open] {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.memory-dialog-card {
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+}
+
+.memory-dialog-art {
+    width: 100%;
+    max-width: 380px;
+    height: auto !important;
+    max-height: none;
+    margin: 20px auto;
+    overflow: visible;
+}
+
+.memory-dialog-art img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+}
