@@ -19,6 +19,7 @@
 	
 	
 <!-- MENU DISCRETO -->
+<!-- MENU DISCRETO -->
 <div class="nav-menu" id="navMenu" hidden>
 
     <button
@@ -49,10 +50,13 @@
         <button type="button" class="nav-link" data-screen="gallery-screen">
             Il nostro rullino
         </button>
+
+        <button type="button" class="nav-link" data-screen="stellina-finale-screen">
+            La mia stellina ✨
+        </button>
     </nav>
 
 </div>
-
 
         <!-- DECORAZIONI DI SFONDO -->
         <div class="background-decoration decoration-one"></div>
@@ -1665,34 +1669,48 @@
 
 
 
-        <!-- CONCLUSIONE DEL RULLINO -->
-        <div class="gallery-ending">
 
-            <div class="story-divider" aria-hidden="true">
-                ✧ ── ♡ ── ✧
-            </div>
+<!-- CONCLUSIONE DEL RULLINO -->
+<div class="gallery-ending">
+    <div class="story-divider" aria-hidden="true">
+        ✧ ── ♡ ── ✧
+    </div>
 
-            <p>
-                Dieci fotogrammi, mille emozioni e tantissimi
-                altri momenti che dobbiamo ancora vivere.
-            </p>
+    <p>
+        Dieci fotogrammi, mille emozioni e tantissimi
+        altri momenti che dobbiamo ancora vivere.
+    </p>
 
-            <p>
-                E se potessi scegliere ancora, tra tutte le
-                persone del mondo, sceglierei sempre te.
-            </p>
+    <p>
+        E se potessi scegliere ancora, tra tutte le
+        persone del mondo, sceglierei sempre te.
+    </p>
 
-            <span class="gallery-ending-signature">
-                Per te, amore mio. ♡
-            </span>
+    <span class="gallery-ending-signature">
+        Per te, amore mio. ♡
+    </span>
+</div>
 
-        </div>
+<!-- PRIMA: QUIZ -->
+<button id="startQuizButton" class="lq-btn" type="button">
+    Scopri quanto mi conosci ♡
+</button>
 
+<!-- DOPO: FINALE STELLARE -->
+<div class="gallery-ending-stellina">
+    <p>
+        Ma c'è ancora una cosa che voglio dirti,
+        amore mio...
+    </p>
 
-        <!-- TORNA ALLA STORIA -->
-		<button id="startQuizButton" class="lq-btn" type="button">
-			Scopri quanto mi conosci ♡
-		</button>
+    <button
+        type="button"
+        class="stellina-reveal-button"
+        onclick="openStellinaFinale()">
+        ✧ E un'ultima cosa, stellina... ♡
+    </button>
+</div>
+
 
     </div>
 
@@ -1856,6 +1874,132 @@
       </div>
     </div>
   </div>
+</section>
+
+	<!-- FINALE: LA MIA STELLINA -->
+<section id="stellina-finale-screen" class="screen stellina-finale">
+
+    <div class="stellina-universe" aria-hidden="true">
+        <span class="star star-1">✦</span>
+        <span class="star star-2">✧</span>
+        <span class="star star-3">✦</span>
+        <span class="star star-4">✧</span>
+        <span class="star star-5">✦</span>
+        <span class="star star-6">✧</span>
+        <span class="star star-7">✦</span>
+        <span class="star star-8">✧</span>
+        <span class="star star-9">✦</span>
+        <span class="star star-10">✧</span>
+    </div>
+
+    <div class="stellina-content">
+
+        <span class="stellina-eyebrow">
+            IL MIO POSTO PREFERITO NELL'UNIVERSO
+        </span>
+
+        <h2 class="stellina-title">
+            La mia <span>stellina</span>
+        </h2>
+
+        <p class="stellina-intro" id="stellina-intro">
+            C'è una parola che spero di non smettere mai
+            di scriverti, nemmeno tra mille anni...
+        </p>
+
+        <button
+            type="button"
+            id="stellina-reveal-button"
+            class="stellina-reveal-button"
+        >
+            <span>Scopri l'ultimo ricordo</span>
+            <span aria-hidden="true">♡</span>
+        </button>
+
+        <div
+            class="stellina-memory"
+            id="stellina-memory"
+            hidden
+        >
+
+            <div class="stellina-orbit" aria-hidden="true">
+                <span>✧</span>
+                <span>♡</span>
+                <span>✦</span>
+            </div>
+
+            <div class="stellina-image-frame">
+                <div class="stellina-image-glow"></div>
+
+                <img
+                    src="amore.jpeg"
+                    alt="La ricerca della parola amore nella nostra chat"
+                    class="stellina-image"
+                >
+            </div>
+
+            <p class="stellina-image-caption">
+                Una piccola parola.
+                <span>Un'infinità di significati.</span>
+            </p>
+
+            <div class="stellina-divider" aria-hidden="true">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <div class="stellina-letter">
+                <span class="stellina-letter-kicker">
+                    PER TE, NEFERTITE
+                </span>
+
+                <h3>
+                    Spero di non smettere mai
+                    di chiamarti amore.
+                </h3>
+
+                <p>
+                    Perché non è soltanto una parola.
+                    È il modo in cui ti penso, il modo
+                    in cui ti cerco e il modo in cui
+                    riesci a rendere speciale anche
+                    una giornata qualunque.
+                </p>
+
+                <p>
+                    Sei la mia stellina, quella che
+                    vorrei continuare a scegliere anche
+                    quando saranno passati mille giorni,
+                    mille notti e mille altri ricordi.
+                </p>
+
+                <p>
+                    E se un giorno ti chiederai quanto
+                    sei importante per me, vorrei che
+                    ti ricordassi di questo:
+                </p>
+
+                <p class="stellina-final-quote">
+                    Non voglio smettere di chiamarti
+                    amore. Voglio solo avere sempre
+                    nuovi motivi per farlo.
+                </p>
+
+                <span class="stellina-signature">
+                    Per la mia stellina, per sempre ♡
+                </span>
+            </div>
+
+            <div class="stellina-ending" aria-hidden="true">
+                <span>♡</span>
+                <span>✦</span>
+                <span>∞</span>
+                <span>✧</span>
+                <span>♡</span>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
     </main>

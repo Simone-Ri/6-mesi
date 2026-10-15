@@ -447,6 +447,7 @@ kittySurpriseButton.addEventListener("click", function () {
 
 
 
+
 // Ripristina il contenuto e lo stile quando la finestra si chiude.
 
 memoryDialog.addEventListener("close", function () {
@@ -852,3 +853,61 @@ document.querySelectorAll("#fifth-screen .fifth-note-button")
             }
         });
     });
+
+
+/* ========================================
+   FINALE STELLARE — LA MIA STELLINA
+   ======================================== */
+
+const stellinaFinalScreen =
+    document.getElementById("stellina-finale-screen");
+
+const stellinaRevealButton =
+    document.getElementById("stellina-reveal-button");
+
+const stellinaMemory =
+    document.getElementById("stellina-memory");
+
+const openStellinaFinale = () => {
+    if (!stellinaFinalScreen) return;
+
+    // Nasconde le altre schermate del sito.
+    document.querySelectorAll(".screen").forEach((screen) => {
+        screen.classList.remove("active");
+    });
+
+    // Mostra il finale.
+    stellinaFinalScreen.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+if (stellinaRevealButton && stellinaMemory) {
+    stellinaRevealButton.addEventListener("click", () => {
+        stellinaRevealButton.hidden = true;
+        stellinaMemory.hidden = false;
+
+        const intro = document.getElementById("stellina-intro");
+
+        if (intro) {
+            intro.textContent =
+                "E questa è una delle piccole cose che " +
+                "vorrei conservare di noi. ♡";
+        }
+
+        // Porta dolcemente la sorpresa in vista.
+        window.setTimeout(() => {
+            stellinaMemory.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 100);
+    });
+}
+
+// Rende disponibile la funzione per collegarla
+// al pulsante che conclude la schermata precedente.
+window.openStellinaFinale = openStellinaFinale;
